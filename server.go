@@ -40,18 +40,22 @@ func main() {
 	log.Printf("  按 Ctrl+C 退出")
 
 	server := &http.Server{Addr: addr, Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		path := filepath.Join(absRoot, filepath.FromSlash(r.URL.Path))
+		urlPath := filepath.FromSlash(r.URL.Path)
+		filePath := filepath.Join(absRoot, urlPath)
 
-		info, err := os.Stat(path)
+		info, err := os.Stat(filePath)
 		if err == nil && !info.IsDir() {
-			http.ServeFile(w, r, path)
+			http.ServeFile(w, r, filePath)
 			return
 		}
 
-		indexPath := filepath.Join(absRoot, "index.html")
-		if _, err := os.Stat(indexPath); err == nil {
-			http.ServeFile(w, r, indexPath)
-			return
+		// 只有目录请求才 fallback 到 index.html（支持 SPA 路由），文件不存在则返回 404
+		if info != nil && info.IsDir() {
+			indexPath := filepath.Join(filePath, "index.html")
+			if _, err := os.Stat(indexPath); err == nil {
+				http.ServeFile(w, r, indexPath)
+				return
+			}
 		}
 
 		http.NotFound(w, r)

@@ -15,6 +15,7 @@ dist/serve.exe~
 screenshot-*.png
 preview-*.png
 *.tmp
+*.zip
 
 # IDE
 .vscode/

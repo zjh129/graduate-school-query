@@ -5,7 +5,7 @@
  *   1. /data/schools.csv
  *   2. /data/schools.md   (Markdown 表格)
  *   3. /data/schools.json
- *   4. /data/schools.xls / /data/schools.xlsx
+ *   4. /data/schools.xlsx / /data/schools.xls
  *
  * 表头约定（兼容中英文别名，缺失字段可空着）：
  *   标识码 / 学校名称 / 投档分数 / 最低位次 / 省份 / 城市 /
@@ -25,7 +25,6 @@ import {
 
 /** 数据源候选（按顺序尝试） */
 const SOURCE_CANDIDATES = [
-  '/data/schools_v2.csv',
   '/data/schools.csv',
   '/data/schools.md',
   '/data/schools.json',

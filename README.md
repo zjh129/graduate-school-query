@@ -96,7 +96,7 @@ npm run build
 ### 编译静态文件服务器（可选）
 
 ```bash
-go build -ldflags="-H windowsgui" -o dist/serve.exe server.go
+go build -o dist/serve.exe server.go
 ```
 
 生成 `dist/serve.exe`，双击即可启动本地静态服务，访问 http://localhost:8080。
@@ -107,12 +107,11 @@ go build -ldflags="-H windowsgui" -o dist/serve.exe server.go
 
 ### 数据源优先级（应用按此顺序查找，命中即停）
 
-1. `/data/schools_v2.csv`
-2. `/data/schools.csv`
-3. `/data/schools.md`
-4. `/data/schools.json`
-5. `/data/schools.xlsx`
-6. `/data/schools.xls`
+1. `/data/schools.csv`
+2. `/data/schools.md`
+3. `/data/schools.json`
+4. `/data/schools.xlsx`
+5. `/data/schools.xls`
 
 ### CSV / JSON 字段说明
 
