@@ -1,0 +1,41 @@
+# 依赖
+node_modules/
+
+# 构建输出
+dist/
+dist-ssr/
+
+# 本地预览文件
+screenshot-current.png
+preview-*.png
+v*.png
+
+# 根目录 data（存放原始xls源文件，仅本地使用）
+data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+npm-debug.log*
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 缓存
+.cache/
+.turbo/
+
+# 类型声明（构建产物）
+*.d.ts
+*.d.ts.map
