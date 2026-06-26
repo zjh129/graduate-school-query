@@ -5,13 +5,10 @@ node_modules/
 dist/
 dist-ssr/
 
-# 本地预览文件
-screenshot-current.png
+# 本地预览/调试文件
+screenshot-*.png
 preview-*.png
-v*.png
-
-# 根目录 data（存放原始xls源文件，仅本地使用）
-data/
+*.tmp
 
 # IDE
 .vscode/
