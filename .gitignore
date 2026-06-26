@@ -1,9 +1,15 @@
 # 依赖
 node_modules/
 
-# 构建输出
-dist/
-dist-ssr/
+# 构建产物
+dist/assets/
+dist/index.html
+dist/preview-dist.mjs
+dist/data/
+dist/xls/
+
+# dist 临时文件
+dist/serve.exe~
 
 # 本地预览/调试文件
 screenshot-*.png

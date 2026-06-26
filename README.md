@@ -93,6 +93,14 @@ npm run build
 
 输出到 `dist/` 目录，可直接部署至任意静态托管平台。
 
+### 编译静态文件服务器（可选）
+
+```bash
+go build -ldflags="-H windowsgui" -o dist/serve.exe server.go
+```
+
+生成 `dist/serve.exe`，双击即可启动本地静态服务，访问 http://localhost:8080。
+
 ---
 
 ## 数据格式说明

@@ -1,10 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
-import { fileURLToPath } from 'node:url'
 import path from 'node:path'
-
-const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
   plugins: [vue(), UnoCSS()],
@@ -19,7 +16,6 @@ export default defineConfig({
   },
   build: {
     target: 'es2015',
-    cssCodeSplit: true,
-    base: './'
+    cssCodeSplit: true
   }
 })
